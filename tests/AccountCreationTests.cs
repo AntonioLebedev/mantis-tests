@@ -13,7 +13,7 @@ namespace mantis_tests
     {
         [SetUp]
 
-        /* public void setUpConfig()
+        public void setUpConfig()
         {
             app.Ftp.BackupFile("/config_inc.php");
             using (Stream localFile = File.Open("config_inc.php", FileMode.Open))
@@ -22,7 +22,7 @@ namespace mantis_tests
             }
                 
         }
-        */
+        
 
         [Test]
         public void TestAccountRegistration()
