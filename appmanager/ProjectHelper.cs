@@ -63,9 +63,8 @@ namespace mantis_tests
 
         public ProjectHelper InitNewProjectCreation()
         {
-            driver.FindElement(By.XPath("/html/body/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[1]/form/button")).Click();
+            driver.FindElement(By.XPath("//form[@action='manage_proj_create_page.php']//button")).Click();
             return this;
-
         }
 
         public ProjectHelper FillProjectForm(ProjectData project)

@@ -18,15 +18,15 @@ namespace mantis_tests
         }
         public void GoToHomePage()
         {
-            if (driver.Url == baseURL + "/mantisbt-2.25.2")
+            if (driver.Url == baseURL)
             {
                 return;
             }
-            driver.Navigate().GoToUrl(baseURL + "/mantisbt-2.25.2");
+            driver.Navigate().GoToUrl(baseURL);
         }
         public void GoProjectsPage()
         {
-            if (driver.Url == baseURL + "/mantisbt-2.25.2/manage_proj_page.php")
+            if (driver.Url == baseURL + "/manage_proj_page.php")
             {
                 return;
             }

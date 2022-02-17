@@ -12,15 +12,7 @@ namespace mantis_tests
         public string Password { get; set; }
 
         public string Email { get; set; }
-
-
-        private string username;
-        private string password;
-        public AccountData()
-        {
-            this.Username = username;
-            this.Password = password;
-        }
+        public string Id { get; set; }
 
     }
 }

@@ -39,5 +39,7 @@ namespace mantis_tests
 
         public string Description { get; set; }
 
+        public string ID { get; set; }
+
     }
 }

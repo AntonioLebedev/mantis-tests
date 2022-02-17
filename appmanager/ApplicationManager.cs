@@ -13,7 +13,7 @@ namespace mantis_tests
     public class ApplicationManager
     {
         protected IWebDriver driver;
-        protected string baseURL;
+        protected string baseUrl;
 
         protected LoginHelper loginHelper;
         protected NavigationHelper navigationHelper;
@@ -21,6 +21,10 @@ namespace mantis_tests
 
         public RegistrationHelper Registration { get; set; }
         public FtpHelper Ftp { get; set; }
+        public JamesHelper James { get; set; }
+        public MailHelper Mail { get; set; }
+        public AdminHelper Admin { get; set; }
+        public APIHelper API { get; set; }
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
@@ -28,13 +32,18 @@ namespace mantis_tests
         {
             driver = new FirefoxDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            baseURL = "http://localhost";
+            baseUrl = "http://localhost/mantisbt-2.25.2";
 
             loginHelper = new LoginHelper(this);
-            navigationHelper = new NavigationHelper(this, baseURL);
+            navigationHelper = new NavigationHelper(this, baseUrl);
             projectHelper = new ProjectHelper(this);
             Registration = new RegistrationHelper(this);
             Ftp = new FtpHelper(this);
+            James = new JamesHelper(this);
+            Mail = new MailHelper(this);
+            Admin = new AdminHelper(this, baseUrl);
+            API = new APIHelper(this);
+
         }
         ~ApplicationManager()
         {
@@ -44,7 +53,7 @@ namespace mantis_tests
             }
             catch (Exception)
             {
-                // Ignore errors if unable to close the browser
+                
             }
         }
 
